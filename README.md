@@ -54,7 +54,7 @@ For example, a file `data.0.K3.L4.train` is the training data for JEDI with 3-me
 
 ### Data Format
 
-Each training/testing file should match the following JSON format:
+Each line in every training/testing file should match the following JSON format:
 
 ```
 {
