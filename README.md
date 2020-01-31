@@ -112,7 +112,7 @@ Both training and testing procedures can be achived by the script [`src/run.py`]
 $ python3 run.py --cv=0 --K=3 --L=4 --emb_dim=128 --rnn_dim=128 --att_dim=16 --hidden_dim=128  --num_epochs=2 --learning_rate=1e-3 --l2_reg=1e-3
 ```
 
-For each epoch, the script will show the progress during training and show the training evaluation metrics, together with the training loss, after training the whole training set once. After the assigned number of epochs, the model will be applied to predict the testing data and compute the testing evaluation metrics. As an example, the above command will result in the following results:
+For each epoch, the script will show the progress during training and show the training evaluation metrics, together with the training loss, after training the whole training set once. As an example, the above command will result in the following results:
 
 ```
 1 Physical GPUs, 1 Logical GPU
@@ -125,7 +125,11 @@ Ls: 0.12653037905693054 A: 0.9476475288761895    P: 0.9459974829335266  F: 0.958
 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 646/646 [00:28<00:00, 22.28it/s]
 Epoch 2 (CV=0, K=3, L=4)
 Ls: 0.03979344666004181 A: 0.9857858924377073    P: 0.9926197805667377  F: 0.9884650906875749,  M: 0.9700091674012169   Se: 0.9843450354193574  Sp: 0.988123967991871
+```
 
+After the assigned number of epochs, the model will be applied to predict the testing data and compute the testing evaluation metrics as:
+
+```
 Testing: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:05<00:00, 29.09it/s]
 Testing (CV=0, K=3, L=4)
 Ls: 0.03267291560769081 A: 0.988861985472155     P: 0.9932379304922158  F: 0.9909782693967208,  M: 0.9764442824547588   Se: 0.9887288666249218  Sp: 0.9890779781559563
