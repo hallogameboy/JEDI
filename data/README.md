@@ -20,7 +20,7 @@ Each file is named as **[dataset]**.**[class]** over three datasets and two clas
 2. **human_isoform**:
 3. **mouse**
 
-**[class]** 
+**[class]** is the class for the instances inside the file:
 1. **pos**:
 2. **neg**
 
