@@ -141,7 +141,7 @@ Finally, the script will also dump the testing predictions into the desinated fo
 I0131 23:44:14.907648 140286815565632 run.py:143] Saving testing predictions to to /PATHTO/pred.0.K3.L4.
 ```
 
-Note the formar of the predictions are in the JSON format as:
+Note the format of the predictions are in the JSON format as:
 ```
 
 [
@@ -150,7 +150,7 @@ Note the formar of the predictions are in the JSON format as:
     label for  the testing example 0
   ],
   [
-    prediction score for  the testing example 1,
+    prediction score for the testing example 1,
     label for  the testing example 1
   ],
   ...
