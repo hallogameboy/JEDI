@@ -32,7 +32,7 @@ Each line represents a gene as a training/testing instance with its file naming 
 ```
 {
   "junctions": {
-    "head": [0, 2261,2923, ...],
+    "head": [0, 2261, 2923, ...],
     "tail": [283, 2657, 3028, ...]
   },
   "strand": "-",
