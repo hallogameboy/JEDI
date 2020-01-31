@@ -68,7 +68,7 @@ Each training/testing file should match the following JSON format:
 * **"acceptors"** maps to a list of integer lists with *L* integers, where the *j*-th integer in the *i*-th list is the ID of the *j*-th *k*-mer in the flanking region of the *i*-th acceptor.
 * **"donors"** maps to a list of integer lists with *L* integers, where the *j*-th integer in the *i*-th list is the ID of the *j*-th *k*-mer in the flanking region of the *i*-th donors.
 
-Note that the *k*-mer IDs should start from 1 and cannot exceed or equal to 5<sup>*k*</sup>.
+Note that the *k*-mer IDs should start from 1 and cannot exceed or equal to 5<sup>*k*</sup> for the embedding purpose.
 
 ## Training, Testing, and Evaluation
 
