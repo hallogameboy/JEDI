@@ -109,6 +109,7 @@ def handle_flags():
 
 Both training and testing procedures can be achived by the script [`src/run.py`](src/run.py) with the above options. For example, to run JEDI with the experimental settings reported in the paper on the first fold in CV for 2 epochs, we can execution the following command:
 ```
+$ cd src/
 $ python3 run.py --cv=0 --K=3 --L=4 --emb_dim=128 --rnn_dim=128 --att_dim=16 --hidden_dim=128  --num_epochs=2 --learning_rate=1e-3 --l2_reg=1e-3
 ```
 
