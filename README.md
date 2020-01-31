@@ -142,7 +142,7 @@ Ls: 0.03267291560769081 A: 0.988861985472155     P: 0.9932379304922158  F: 0.990
 Finally, the script will also dump the testing predictions into the desinated folder for the potential of conducting further analysis as:
 
 ```
-I0131 23:44:14.907648 140286815565632 run.py:143] Saving testing predictions to to /PATHTO/pred.0.K3.L4.
+I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX run.py:143] Saving testing predictions to to /PATHT/pred.0.K3.L4.
 ```
 
 Note the format of the predictions are in the JSON format as:
