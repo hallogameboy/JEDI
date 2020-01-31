@@ -1,11 +1,8 @@
 import tensorflow as tf
-from tensorflow.keras.layers import Concatenate, Embedding, Flatten, Reshape
-from tensorflow.keras.layers import Bidirectional, GRU, LSTM
+from tensorflow.keras.layers import Concatenate, Embedding, Reshape
+from tensorflow.keras.layers import Bidirectional, GRU
 from tensorflow.keras.layers import Dense, Attention
-from tensorflow.keras.layers import MaxPool1D, Conv1D
 from tensorflow.keras import regularizers
-from tensorflow.python.ops import math_ops
-from tensorflow.python.ops import array_ops
 
 
 import numpy as np
@@ -40,7 +37,7 @@ class JEDI(tf.keras.Model):
     def __init__(self, FLAGS):
         super(JEDI, self).__init__()
         self.K = FLAGS.K
-        self.L = FLAGS.L * 2
+        self.L = FLAGS.L
         self.max_len = FLAGS.max_len
         self.emb_dim = FLAGS.emb_dim
         self.rnn_dim = FLAGS.rnn_dim

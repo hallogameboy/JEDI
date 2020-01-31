@@ -6,11 +6,17 @@ import numpy as np
 import os
 import sys
 import tensorflow as tf
-import tensorflow_addons as tfa
+try:
+    import ujson as json
+except:
+    import json
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
+from sklearn.metrics import matthews_corrcoef
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
 from tqdm import tqdm
 import yaml
-import json
-from sklearn.metrics import accuracy_score, matthews_corrcoef, f1_score, recall_score, precision_score
 
 import jedi
 import utils
@@ -29,7 +35,8 @@ def main(argv):
     cfg = yaml.load(open(FLAGS.config, 'r'), Loader=yaml.BaseLoader)
     data_prefix = '{}/data.{}.K{}.L{}'.format(
             cfg['path_data'], FLAGS.cv, FLAGS.K, FLAGS.L) 
-    path_pred  = '{}/pred.{}.K{}.L{}'.format(cfg['path_pred'], FLAGS.cv, FLAGS.K, FLAGS.L)
+    path_pred  = '{}/pred.{}.K{}.L{}'.format(
+            cfg['path_pred'], FLAGS.cv, FLAGS.K, FLAGS.L)
 
     train_data = utils.Data(data_prefix + '.train', FLAGS)
     test_data = utils.Data(data_prefix + '.test', FLAGS)
@@ -38,7 +45,8 @@ def main(argv):
 
     # Optimization settings.
     loss_object = tf.keras.losses.BinaryCrossentropy()
-    optimizer = tf.keras.optimizers.Adam(learning_rate=FLAGS.learning_rate, amsgrad=True)
+    optimizer = tf.keras.optimizers.Adam(
+            learning_rate=FLAGS.learning_rate, amsgrad=True)
 
     # Logging metric settings.
     train_loss = tf.keras.metrics.Mean(name='train_loss')
