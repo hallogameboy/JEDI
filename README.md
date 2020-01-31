@@ -78,7 +78,7 @@ Note that the *k*-mer IDs should start from 1 and cannot exceed or equal to 5<su
 
 ### Hyper-parameters and experimental setttings through command line options.
 
-All of the expeirmental setups and model hyper-parameters can be assigned through the command line options of our implementation. To be specific, the definitions of all options are listed in [`src/utils.py`](src/utils.py).
+All of the expeirmental setups and model hyper-parameters can be assigned through the command line options of our implementation. To be specific, the definitions of all options are listed in the function `handle_flags()` in [`src/utils.py`](src/utils.py) as follows.
 
 ```
 def handle_flags():
