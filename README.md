@@ -78,6 +78,33 @@ Note that the *k*-mer IDs should start from 1 and cannot exceed or equal to 5<su
 
 ### Hyper-parameters and experimental setttings through command line options.
 
+All of the expeirmental setups and model hyper-parameters can be assigned through the command line options of our implementation. To be specific, the definitions of all options are listed in [`src/utils.py`](src/utils.py).
+
+```
+def handle_flags():
+    flags.DEFINE_string("tflog", '3', "The setting for TF_CPP_MIN_LOG_LEVEL (default: 3)")
+    # Data configuration.
+    flags.DEFINE_string('config' ,'config.yml', 'configure file (default: config.yml)')
+    flags.DEFINE_integer('cv',  0, 'Fold for cross-validation (default: 0)')
+    flags.DEFINE_integer('K',   3, 'K for k-mers (default: 3)')
+    flags.DEFINE_integer('L',   4, 'Length for junction sites (default: 4)')
+    
+    # Model parameters.
+    flags.DEFINE_integer('emb_dim',    128, 'Dimensionality for k-mers (default: 12)')
+    flags.DEFINE_integer('rnn_dim',    128, 'Dimensionality for RNN layers (default: 128)')
+    flags.DEFINE_integer('att_dim',     16, 'Dimensionality for attention layers (default: 16)')
+    flags.DEFINE_integer('hidden_dim', 128, 'Dimensionality for hidden layers (default: 128)')
+    flags.DEFINE_integer('max_len',    128, 'Max site number for acceptors/donors (default: 128)')
+
+    # Training parameters.
+    flags.DEFINE_integer("batch_size",    64, "Batch Size (default: 64)")
+    flags.DEFINE_integer("num_epochs",    10, "Number of training epochs (default: 10)")
+    flags.DEFINE_integer('random_seed',  252, 'Random seeds for reproducibility (default: 252)')
+    flags.DEFINE_float('learning_rate', 1e-3, 'Learning rate while training (default: 1e-3)')
+    flags.DEFINE_float('l2_reg',        1e-3, 'L2 regularization lambda (default: 1e-3)')
+    FLAGS = flags.FLAGS
+```
+
 ### Training 
 
 ### Testing
