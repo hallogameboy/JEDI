@@ -1,5 +1,8 @@
 # JEDI for Circular RNA Prediction.
 
+This repository provides the implementation of our paper: "JEDI: Circular RNA Prediction based on Junction Encoders and Deep Interaction among Splice Sites," Jyun-Yu Jiang, Chelsea J.-T. Ju, Junheng Hao, Muhao Chen and Wei Wang. (Submitted to ISMB'20).
+
+
 ## Required Packages
 
 * Python 3.6.9 (or a compatible version)
