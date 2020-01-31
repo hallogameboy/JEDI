@@ -72,4 +72,13 @@ Note that the *k*-mer IDs should start from 1 and cannot exceed or equal to 5<su
 
 ## Training, Testing, and Evaluation
 
-Coming soon.
+
+### Hyper-parameters and experimental setttings through command line options.
+
+### Training 
+
+### Testing
+
+### Evaluation
+
+
