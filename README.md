@@ -45,7 +45,7 @@ This file is the default setting for JEDI in our implementation while the model 
 
 All of the data used by `path_data` should be put at `path_data` identified in the configuration file.
 
-### Data Naming
+### File Naming
 
 Training and testing data should follow the desinated naming as `data.[Fold].K[K].L[L].[train/test]`, where 
 * `[Fold]` is the fold number in cross-validation.
