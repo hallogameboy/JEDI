@@ -147,7 +147,6 @@ I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX run.py:143] Saving testing predictions to 
 
 Note the format of the predictions are in the JSON format as:
 ```
-
 [
   [
     prediction score for the testing example 0,
