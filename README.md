@@ -105,15 +105,57 @@ def handle_flags():
     FLAGS = flags.FLAGS
 ```
 
-### Training and Testing
+### Training and Testing with Evaluation
 
-Both training and testing procedures can be achived by the script [`src/run.py`](src/run.py) with the above options. For example, to run JEDI with the experimental settings reported in the paper on the first fold in CV for 5 epochs, we can execution the following command:
+Both training and testing procedures can be achived by the script [`src/run.py`](src/run.py) with the above options. For example, to run JEDI with the experimental settings reported in the paper on the first fold in CV for 2 epochs, we can execution the following command:
 ```
-$ python3 run.py --cv=0 --K=3 --L=2 --emb_dim=128 --rnn_dim=128 --att_dim=16 --hidden_dim=128  --num_epochs=5
+$ python3 run.py --cv=0 --K=3 --L=4 --emb_dim=128 --rnn_dim=128 --att_dim=16 --hidden_dim=128  --num_epochs=2 --learning_rate=1e-3 --l2_reg=1e-3
 ```
+
+For each epoch, the script will show the progress during training and show the training evaluation metrics, together with the training loss, after training the whole training set once. After the assigned number of epochs, the model will be applied to predict the testing data and compute the testing evaluation metrics. As an example, the above command will result in the following results:
+
+```
+1 Physical GPUs, 1 Logical GPU
+I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX utils.py:82] Loaded XXXXX records from /PATHTO/data.0.K3.L4.train.
+I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX utils.py:82] Loaded XXXXX records from /PATHTO/data.0.K3.L4.test.
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 646/646 [00:42<00:00, 15.20it/s]
+Epoch 1 (CV=0, K=3, L=4)
+Ls: 0.12653037905693054 A: 0.9476475288761895    P: 0.9459974829335266  F: 0.9582399752762112,  M: 0.8886609741180113   Se: 0.9708034910571015  Sp: 0.9100723993395148
+
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 646/646 [00:28<00:00, 22.28it/s]
+Epoch 2 (CV=0, K=3, L=4)
+Ls: 0.03979344666004181 A: 0.9857858924377073    P: 0.9926197805667377  F: 0.9884650906875749,  M: 0.9700091674012169   Se: 0.9843450354193574  Sp: 0.988123967991871
+
+Testing: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:05<00:00, 29.09it/s]
+Testing (CV=0, K=3, L=4)
+Ls: 0.03267291560769081 A: 0.988861985472155     P: 0.9932379304922158  F: 0.9909782693967208,  M: 0.9764442824547588   Se: 0.9887288666249218  Sp: 0.9890779781559563
+```
+
+
 
 ### Predictions
 
+Finally, the script will also dump the testing predictions into the desinated folder for the potential of conducting further analysis as:
+
+```
+I0131 23:44:14.907648 140286815565632 run.py:143] Saving testing predictions to to /PATHTO/pred.0.K3.L4.
+```
+
+Note the formar of the predictions are in the JSON format as:
+```
+
+[
+  [
+    prediction score for the testing example 0,
+    label for  the testing example 0
+  ],
+  [
+    prediction score for  the testing example 1,
+    label for  the testing example 1
+  ],
+  ...
+]
+```
 
 
 
