@@ -11,11 +11,12 @@ except:
 
 
 def handle_flags():
-    flags.DEFINE_string("tflog", '3', "The setting for TF_CPP_MIN_LOG_LEVEL (default: 3)")
+    flags.DEFINE_string("tflog",
+            '3', "The setting for TF_CPP_MIN_LOG_LEVEL (default: 3)")
     # Data configuration.
     flags.DEFINE_string('config',
             'config.yml', 'configure file (default: config.yml)')
-    flags.DEFINE_integer('cv', 0, 'Set number for cross-validation (default: 0)')
+    flags.DEFINE_integer('cv', 0, 'Fold for cross-validation (default: 0)')
     flags.DEFINE_integer('K', 3, 'K for k-mers (default: 3)')
     flags.DEFINE_integer('L', 4, 'Length for junction sites (default: 4)')
 
@@ -61,7 +62,7 @@ def limit_gpu_memory_growth():
 
 class Data:
     def __init__(self, file_name, FLAGS):
-        self.L = FLAGS.L * 2
+        self.L = FLAGS.L
         self.max_len = FLAGS.max_len
         self.batch_size = FLAGS.batch_size
         self.records = []
@@ -69,19 +70,16 @@ class Data:
         with open(file_name, 'r') as fp:
             for line in fp:
                 data = json.loads(line)
-                assert(len(data['acceptors'][0]) == len(data['donors'][0])  == self.L)
+                assert(len(data['acceptors'][0]) == self.L)
+                assert(len(data['donors'][0])  == self.L)
                 self.records.append({
-                    'circulars': data['circulars'] if 'circulars' in data else [],
-                    'heads': data['heads'] if 'heads' in data else [],
-                    'tails': data['tails'] if 'tails' in data else [],
-                    'gene': data['gene'] if 'gene' in data else [],
-                    'strand': data['strand'] if 'strand' in data else [],
                     'acceptors': flatten(data['acceptors']),
                     'donors': flatten(data['donors']),
                     'length_a': len(data['acceptors']),
                     'length_d': len(data['donors']),
                     'label': data['label']})
-        logging.info('Loaded {} records from {}.'.format(len(self.records), file_name))
+        logging.info('Loaded {} records from {}.'.format(len(self.records),
+            file_name))
 
     def pad(self, x):
         y = np.zeros(self.L * self.max_len, dtype=np.int32)
