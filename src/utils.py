@@ -22,7 +22,7 @@ def handle_flags():
 
     # Model parameters.
     flags.DEFINE_integer('emb_dim',
-            128, 'Dimensionality for k-mers (default: 129)')
+            128, 'Dimensionality for k-mers (default: 128)')
     flags.DEFINE_integer('rnn_dim',
             128, 'Dimensionality for RNN layers (default: 128)')
     flags.DEFINE_integer('att_dim',
