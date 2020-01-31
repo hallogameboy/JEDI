@@ -7,8 +7,8 @@
 * NumPy 1.17.4 (or a compatible version)
 * Abseil 1.13.0 (or a compatible version)
 * scikit-learn 0.22 (or a compatible version)
-* tqdm 4.40.1
-* Yaml 5.2
+* tqdm 4.40.1 (or a compatible version)
+* Yaml 5.2 (or a compatible version)
 * ujson (or be subsequently replaced with geuine json)
 
 
