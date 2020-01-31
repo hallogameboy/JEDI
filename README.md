@@ -117,8 +117,8 @@ For each epoch, the script will show the progress during training and show the t
 
 ```
 1 Physical GPUs, 1 Logical GPU
-I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX utils.py:82] Loaded XXXXX records from /PATHTO/data.0.K3.L4.train.
-I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX utils.py:82] Loaded XXXXX records from /PATHTO/data.0.K3.L4.test.
+I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX utils.py:82] Loaded XXXXX records from /PATHT/data.0.K3.L4.train.
+I0131 XX:XX:XX.XXXXXX XXXXXXXXXXXXXXX utils.py:82] Loaded XXXXX records from /PATHT/data.0.K3.L4.test.
 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 646/646 [00:42<00:00, 15.20it/s]
 Epoch 1 (CV=0, K=3, L=4)
 Ls: 0.12653037905693054 A: 0.9476475288761895    P: 0.9459974829335266  F: 0.9582399752762112,  M: 0.8886609741180113   Se: 0.9708034910571015  Sp: 0.9100723993395148
