@@ -53,11 +53,11 @@ Note that the offets are based on the positive strand, so the sequence should be
 
 ## Experimental Setup
 
-In our paper, we have two main tasks and one independent study using the following experimental setup with datasets for 5-fold cross-validation.
+In our paper, we have two main tasks with 5-fold cross-validation and one independent study using the following experimental setup for datasets.
 
 ### Isoform-level Circular RNA Prediction
 
-For each fold:
+For each in the five folds:
 
 | Training | Testing |
 | ----------- | ----------- |
@@ -66,15 +66,13 @@ For each fold:
 
 ### Gene-level Circular RNA Prediction
 
-For each fold:
+For each in the five folds:
 
 | Training | Testing |
 | ----------- | ----------- |
 | 80% of human_gene.* | 20% of human_gene.*  |
 
 ### Independent Study
-
-For each fold:
 
 | Training | Testing |
 | ----------- | ----------- |
