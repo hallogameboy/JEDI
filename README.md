@@ -12,9 +12,16 @@
 * ujson (or be subsequently replaced with geuine json)
 
 
-## General Instructions
+## Experimental Datasets and Settings
 
-Coming soon.
+Please see the three datasets in [data/](data) with detailed instructions.
+
+
+## General Instructions for Conducting Experiments with JEDI
+
+1. Prepare datasets for K-fold cross-validation following the designated JSON format as shown in the section of data preparation.
+2. Execute the model with corresponding hyperparameters and experimental settings.
+3. Done!
 
 ## Data Preparation
 
