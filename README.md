@@ -62,7 +62,7 @@ Each line in every training/testing file should match the following JSON format:
 ```
 {
   "label": 0 or 1,
-  "acceptors": [[L integers)], [L integers], ...],
+  "acceptors": [[L integers], [L integers], ...],
   "donors": [[L integers], [L integers], ...],
 }  
 ```
