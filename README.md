@@ -14,6 +14,9 @@ This repository provides the implementation of our paper: "[JEDI: Circular RNA P
 * Yaml 5.2 (or a compatible version)
 * ujson (or be subsequently replaced with geuine json)
 
+## Updates
+
+* Feb 2020: We update the script of generating the input files from partitioned raw data for the convenience of reproducing experiments.
 
 ## Experimental Datasets and Settings
 
@@ -72,6 +75,24 @@ Each line in every training/testing file should match the following JSON format:
 * **"donors"** maps to a list of integer lists with *L* integers, where the *j*-th integer in the *i*-th list is the ID of the *j*-th *k*-mer in the flanking region of the *i*-th donors.
 
 Note that the *k*-mer IDs should start from 1 and cannot exceed or equal to 5<sup>*k*</sup> for the embedding purpose.
+
+### Generation Script
+
+For the convinience, the script [`src/generate_input.py`](src/generate_input.py) can be utilized to generate the input files from partitioned raw data. The following command is an example:
+```
+$ python3 ./generate_input.py
+--usage ./generate_input.py pos_data neg_data K L output_file
+$ python3 ./generate_input.py ./data_raw/data.0.test.pos ./data_raw/data.0.test.neg 3 4 ./data_jedi/data.0.K3.L4.test
+pos_data = ./data_raw/data.0.test.pos
+neg_data = ./data_raw/data.0.test.neg
+L = 4
+K = 3
+output_file = ./data_jedi/data.0.K3.L4.test
+Processing ./data_raw/data.0.test.pos
+Processing ./data_raw/data.0.test.neg
+```
+Precisely, `./data_raw/data.0.test.pos` and `./data_raw/data.0.test.neg` are the partitioned files of positive and negative instances for the testing data in the first fold. The script generates the input file of JEDI based on those two files and the parameters K=3 and L=4. Finally, the results are dumped in `./data_jedi/data.0.K3.L4.test`. Note that the directory of the output_file location should exist before running the script.
+
 
 ## Training, Testing, and Evaluation
 
