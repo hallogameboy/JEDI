@@ -80,6 +80,7 @@ Note that the *k*-mer IDs should start from 1 and cannot exceed or equal to 5<su
 
 For the convinience, the script [`src/generate_input.py`](src/generate_input.py) can be utilized to generate the input files from partitioned raw data. The following command is an example:
 ```
+$ cd src/
 $ python3 ./generate_input.py
 --usage ./generate_input.py pos_data neg_data K L output_file
 $ python3 ./generate_input.py ./data_raw/data.0.test.pos ./data_raw/data.0.test.neg 3 4 ./data_jedi/data.0.K3.L4.test
