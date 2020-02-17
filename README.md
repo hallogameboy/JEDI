@@ -91,7 +91,7 @@ output_file = ./data_jedi/data.0.K3.L4.test
 Processing ./data_raw/data.0.test.pos
 Processing ./data_raw/data.0.test.neg
 ```
-Precisely, `./data_raw/data.0.test.pos` and `./data_raw/data.0.test.neg` are the partitioned files of positive and negative instances for the testing data in the first fold. The script generates the input file of JEDI based on those two files and the parameters K=3 and L=4. Finally, the results are dumped in `./data_jedi/data.0.K3.L4.test`. Note that the directory of the output_file location should exist before running the script.
+Precisely, `./data_raw/data.0.test.pos` and `./data_raw/data.0.test.neg` are the partitioned files of positive and negative instances for the testing data in the first fold. The script generates the input file of JEDI based on those two files and the hyper-parameters K=3 and L=4. Finally, the results are dumped in `./data_jedi/data.0.K3.L4.test`. Note that the directory of the output_file location should exist before running the script.
 
 
 ## Training, Testing, and Evaluation
